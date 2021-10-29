@@ -8,6 +8,7 @@ import NotFound from './Pages/NotFound/NotFound';
 import TopMenu from "./Pages/Shared/TopMenu/TopMenu";
 import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute"
 import Footer from './Pages/Shared/Footer/Footer';
+import Packages from './Pages/Home/Packages/Packages';
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
             <Route exact path='/home'>
               <Home></Home>
             </Route>
+            <PrivateRoute exact path='/packages'>
+              <Packages></Packages>
+            </PrivateRoute>
             <Route exact path='/login'>
               <Login></Login>
             </Route>
