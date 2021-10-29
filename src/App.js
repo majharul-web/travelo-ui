@@ -7,6 +7,7 @@ import MyOrders from './Pages/MyOrders/MyOrders';
 import NotFound from './Pages/NotFound/NotFound';
 import TopMenu from "./Pages/Shared/TopMenu/TopMenu";
 import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute"
+import Footer from './Pages/Shared/Footer/Footer';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
               <NotFound></NotFound>
             </Route>
           </Switch>
+          <Footer></Footer>
         </Router>
       </AuthProvider>
     </div>
