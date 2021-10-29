@@ -8,7 +8,7 @@ const TopMenu = () => {
     const { user, logOut } = useAuth();
     return (
         <Navbar collapseOnSelect expand="lg" variant="light">
-            <Container fluid className='mx-5'>
+            <Container fluid className='mx-5 py-3'>
 
                 <Navbar.Brand >
                     <Link to='home'>
