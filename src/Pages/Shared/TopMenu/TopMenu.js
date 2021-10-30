@@ -29,14 +29,20 @@ const TopMenu = () => {
                     </Nav>
 
                     <Nav>
-                        <Nav.Link as={Link} to="/addDestination" active className=' mx-1'>
-                            Add
-                            Destination
-                        </Nav.Link>
 
-                        <Nav.Link as={Link} to="/manageOrders" active className=' mx-1'>
-                            Manage Orders
-                        </Nav.Link>
+
+
+                        {
+                            user?.email && <Nav.Link as={Link} to="/manageOrders" active className=' mx-1'>
+                                Manage Orders
+                            </Nav.Link>
+                        }
+                        {
+                            user?.email && <Nav.Link as={Link} to="/addDestination" active className=' mx-1'>
+                                Add
+                                Destination
+                            </Nav.Link>
+                        }
                         {
                             user?.email && <Nav.Link as={Link} to="/orders" active className=' mx-1'>My Orders</Nav.Link>
                         }

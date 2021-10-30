@@ -1,19 +1,24 @@
 import React from 'react';
+import { Button, Card, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-const Destination = () => {
+const Destination = (props) => {
+    const { imgURL, destination, details, _id } = props?.destination;
     return (
-        <div className='py-5'>
-            <div className="container">
-                <div className='text-center'>
-                    <h2 className='fs-1 pt-5'>Popular Destination</h2>
-                    <p className='pt-3'>Suffered alteration in some form, by injected humour or good day <br /> randomised booth anim 8-bit hella wolf moon beard words.</p>
-                </div>
-                <div className="row row-cols-3 row-cols-md-3 g-2">
-
-                </div>
-            </div>
-
-        </div>
+        <Col>
+            <Card>
+                <Card.Img variant="top" src={imgURL} />
+                <Card.Body>
+                    <Card.Title>{destination}</Card.Title>
+                    <Card.Text>
+                        {details.slice(0, 150)}
+                    </Card.Text>
+                    <Link to={`/placeOrder/${_id}`}>
+                        <Button variant='danger'>Book Now</Button>
+                    </Link>
+                </Card.Body>
+            </Card>
+        </Col>
     );
 };
 

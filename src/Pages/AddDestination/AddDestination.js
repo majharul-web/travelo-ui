@@ -12,7 +12,7 @@ const AddDestination = () => {
             .then(res => {
 
                 if (res.data.insertedId) {
-                    alert('product insert success');
+                    alert('Destination insert success');
                     reset();
                 }
 
@@ -21,7 +21,7 @@ const AddDestination = () => {
     };
     return (
         <div className='container py-4'>
-            <div className='addUser'>
+            <div>
                 <h3 className='text-center text-danger py-3'>Add Travel Destination</h3>
                 <form className='d-flex flex-column justify-content-center align-items-center ' onSubmit={handleSubmit(onSubmit)}>
 

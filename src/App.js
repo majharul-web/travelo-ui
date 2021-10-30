@@ -7,10 +7,11 @@ import NotFound from './Pages/NotFound/NotFound';
 import TopMenu from "./Pages/Shared/TopMenu/TopMenu";
 import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute"
 import Footer from './Pages/Shared/Footer/Footer';
-import Destination from './Pages/Home/Destination/Destination';
+import Destinations from './Pages/Home/Destinations/Destinations';
 import MyOrders from './Pages/MyOrders/MyOrders';
 import AddDestination from './Pages/AddDestination/AddDestination';
 import ManageOrders from './Pages/ManageOrders/ManageOrders';
+import PlaceOrder from './Pages/PlaceOrder/PlaceOrder';
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
               <Home></Home>
             </Route>
             <PrivateRoute exact path='/destination'>
-              <Destination></Destination>
+              <Destinations></Destinations>
             </PrivateRoute>
             <Route exact path='/login'>
               <Login></Login>
@@ -34,6 +35,9 @@ function App() {
             <Route exact path='/addDestination'>
               <AddDestination></AddDestination>
             </Route>
+            <PrivateRoute exact path='/placeOrder/:id'>
+              <PlaceOrder></PlaceOrder>
+            </PrivateRoute>
             <Route exact path='/manageOrders'>
               <ManageOrders></ManageOrders>
             </Route>
