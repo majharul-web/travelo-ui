@@ -5,13 +5,14 @@ import { Button, Table } from 'react-bootstrap';
 const ManageOrders = () => {
     const [allOrders, setAllOrders] = useState([]);
     const [isDeleted, setIsDeleted] = useState(null);
+    const [isUpdated, setIsUpdated] = useState(null);
 
     // get data from database
     useEffect(() => {
         fetch('http://localhost:5000/manageOrders')
             .then(res => res.json())
             .then(data => setAllOrders(data))
-    }, [isDeleted])
+    }, [isDeleted, isUpdated])
 
     // delete
     const handleDelete = (id) => {
@@ -38,11 +39,31 @@ const ManageOrders = () => {
 
     // update
     const handleUpdateStatus = (id) => {
+        fetch(`http://localhost:5000/orderStatus/update/${id}`,
+            {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json'
+                }
+            })
+            // .then()
+
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount > 0) {
+                    alert('Order Approved')
+                    setIsUpdated(true);
+                }
+                else {
+                    setIsUpdated(false);
+                }
+            })
 
     }
 
     return (
-        <div className='container'>
+        <div className='container py-4'>
             <h3 className='py-3'>
                 All Orders :
                 <span className='text-danger ms-2'>
@@ -59,12 +80,12 @@ const ManageOrders = () => {
                         <th>Tour Place</th>
                         <th>Cost</th>
                         <th>Status</th>
-                        <th>Order Approve</th>
+                        <th>Update Status</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 {allOrders?.map((order, index) => (
-                    <tbody>
+                    <tbody key={order._id}>
                         <tr>
                             <td>{index}</td>
                             <td>{order?.name}</td>
@@ -73,7 +94,7 @@ const ManageOrders = () => {
                             <td>$ {order?.cost}</td>
                             <td>{order?.status}</td>
                             <td>
-                                <Button onClick={() => handleUpdateStatus(order?._id)} className='text-primary text-decoration-none text-center' variant="link">Update</Button>
+                                <Button onClick={() => handleUpdateStatus(order?._id)} className='text-primary text-decoration-none text-center' variant="link">{(order?.status === 'Approved' ? 'Updated ' : 'Update')}</Button>
                             </td>
                             <td>
                                 <Button onClick={() => handleDelete(order?._id)} className='text-danger text-decoration-none text-center' variant="link">Delete</Button>
