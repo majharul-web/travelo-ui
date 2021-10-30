@@ -6,9 +6,10 @@ const Destinations = () => {
 
     // get data from database
     useEffect(() => {
-        fetch('http://localhost:5000/destination')
+        fetch('https://ancient-brushlands-56667.herokuapp.com/destination')
             .then(res => res.json())
-            .then(data => setDestinations(data))
+
+            .then(data => setDestinations(data));
     }, [])
     return (
         <div className='py-5'>
@@ -20,6 +21,7 @@ const Destinations = () => {
                 <div className="row   row-cols-md-3 row-cols-1 g-4">
                     {
                         destinations.map(destination => <Destination key={destination._id} destination={destination}></Destination>)
+
                     }
                 </div>
             </div>

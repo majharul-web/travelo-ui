@@ -8,7 +8,7 @@ const AddDestination = () => {
 
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        axios.post('http://localhost:5000/addDestination', data)
+        axios.post('https://ancient-brushlands-56667.herokuapp.com/addDestination', data)
             .then(res => {
 
                 if (res.data.insertedId) {

@@ -15,7 +15,7 @@ const PlaceOrder = () => {
 
     // get data from database
     useEffect(() => {
-        fetch('http://localhost:5000/destination')
+        fetch('https://ancient-brushlands-56667.herokuapp.com/destination')
             .then(res => res.json())
             .then(data => setDestinations(data))
     }, [])
@@ -40,7 +40,7 @@ const PlaceOrder = () => {
         data.destination = destination;
         data.status = 'pending';
 
-        axios.post('http://localhost:5000/addOrders', data)
+        axios.post('https://ancient-brushlands-56667.herokuapp.com/addOrders', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Confirm Order');

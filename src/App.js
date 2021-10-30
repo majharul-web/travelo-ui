@@ -12,6 +12,7 @@ import MyOrders from './Pages/MyOrders/MyOrders';
 import AddDestination from './Pages/AddDestination/AddDestination';
 import ManageOrders from './Pages/ManageOrders/ManageOrders';
 import PlaceOrder from './Pages/PlaceOrder/PlaceOrder';
+import About from './Pages/Home/About/About';
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
             </Route>
             <Route exact path='/home'>
               <Home></Home>
+            </Route>
+            <Route exact path='/about'>
+              <About></About>
             </Route>
             <PrivateRoute exact path='/destination'>
               <Destinations></Destinations>

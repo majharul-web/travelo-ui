@@ -28,8 +28,8 @@ const Login = () => {
 
 
     return (
-        <div className='text-center'>
-            <h3>Please Login</h3>
+        <div className='container text-center py-5'>
+            <h3 className='py-3'>Please Login</h3>
             <Button variant="danger" onClick={handleSingInUsingGoogle}>
                 <span className='mx-2'>
                     <i className='fab fa-google'></i>
