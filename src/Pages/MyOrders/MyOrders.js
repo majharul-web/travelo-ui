@@ -22,7 +22,7 @@ const MyOrders = () => {
     const handleDelete = (id) => {
         const proceed = window.confirm('Are you sure to Delete');
         if (proceed) {
-            fetch(`http://localhost:5000/myOrder/order/${id}`, {
+            fetch(`http://localhost:5000/myOrders/order/delete/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -57,6 +57,7 @@ const MyOrders = () => {
                         <th>User Email</th>
                         <th>Tour Place</th>
                         <th>Cost</th>
+                        <th>Status</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -68,8 +69,9 @@ const MyOrders = () => {
                             <td>{order?.email}</td>
                             <td>{order?.destination}</td>
                             <td>$ {order?.cost}</td>
+                            <td>{order?.status}</td>
                             <td>
-                                <Button n onClick={() => handleDelete(order?._id)} className='text-danger text-decoration-none text-center' variant="link">Delete</Button>
+                                <Button onClick={() => handleDelete(order?._id)} className='text-danger text-decoration-none text-center' variant="link">Delete</Button>
                             </td>
 
                         </tr>
