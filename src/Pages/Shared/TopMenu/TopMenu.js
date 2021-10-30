@@ -22,13 +22,21 @@ const TopMenu = () => {
                     <Nav className="me-auto ">
                         <Nav.Link as={Link} to="/home" active className=' mx-1'>Home</Nav.Link>
 
-                        <Nav.Link as={Link} to="/packages" active className=' mx-1'>Packages</Nav.Link>
+                        <Nav.Link as={Link} to="/destination" active className=' mx-1'>Destination</Nav.Link>
 
                         <Nav.Link as={Link} to="/about" active className=' mx-1'>About</Nav.Link>
 
                     </Nav>
 
                     <Nav>
+                        <Nav.Link as={Link} to="/addDestination" active className=' mx-1'>
+                            Add
+                            Destination
+                        </Nav.Link>
+
+                        <Nav.Link as={Link} to="/manageOrders" active className=' mx-1'>
+                            Manage Orders
+                        </Nav.Link>
                         {
                             user?.email && <Nav.Link as={Link} to="/orders" active className=' mx-1'>My Orders</Nav.Link>
                         }
@@ -46,8 +54,10 @@ const TopMenu = () => {
                         {
                             user?.displayName &&
                             <Nav.Link className=' mx-2'>
-                                <span className='text-danger mx-1'><i className="fas fa-user-check"></i></span>
-                                {user?.displayName}
+                                <div>
+                                    <img style={{ width: '30px', height: "30px", borderRadius: '50%' }} src={user?.photoURL} alt={user?.displayName} />
+                                </div>
+
                             </Nav.Link>
                         }
                     </Nav>

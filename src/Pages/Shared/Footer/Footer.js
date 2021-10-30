@@ -88,7 +88,7 @@ const Footer = () => {
                             <div>
                                 <h3 className='text-light'>Instagram</h3>
                                 <div className='mt-4'>
-                                    <div className="row row-cols-2 row-cols-md-3 g-2">
+                                    <div className="row row-cols-3 row-cols-md-3 g-2">
                                         <div>
                                             <img src="https://i.ibb.co/3BwsQQj/i1.webp" alt="" />
                                         </div>
