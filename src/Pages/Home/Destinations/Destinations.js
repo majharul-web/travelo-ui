@@ -16,15 +16,14 @@ const Destinations = () => {
         <div className='py-5'>
             <div className="container">
                 <div className='text-center'>
-                    <h2 className='fs-1 pt-5'>Popular Destination</h2>
-                    <p className='pt-3'>Suffered alteration in some form, by injected humour or good day <br /> randomised booth anim 8-bit hella wolf moon beard words.</p>
+                    <h2 className='fs-1 pt-5 title-color'>Popular Destination</h2>
+                    <p className='pt-3 fs-5 p-color'>Suffered alteration in some form, by injected humour or good day <br /> randomised booth anim 8-bit hella wolf moon beard words.</p>
                 </div>
                 {
                     destinations.length === 0 ?
                         <div className='text-center'>
                             <Spinner animation="border" variant="danger" />
                         </div>
-
                         :
                         <div className="row   row-cols-md-3 row-cols-1 g-4">
                             {
