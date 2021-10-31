@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Spinner } from 'react-bootstrap';
 import Destination from '../Destination/Destination';
 
 const Destinations = () => {
@@ -18,12 +19,20 @@ const Destinations = () => {
                     <h2 className='fs-1 pt-5'>Popular Destination</h2>
                     <p className='pt-3'>Suffered alteration in some form, by injected humour or good day <br /> randomised booth anim 8-bit hella wolf moon beard words.</p>
                 </div>
-                <div className="row   row-cols-md-3 row-cols-1 g-4">
-                    {
-                        destinations.map(destination => <Destination key={destination._id} destination={destination}></Destination>)
+                {
+                    destinations.length === 0 ?
+                        <div className='text-center'>
+                            <Spinner animation="border" variant="danger" />
+                        </div>
 
-                    }
-                </div>
+                        :
+                        <div className="row   row-cols-md-3 row-cols-1 g-4">
+                            {
+                                destinations.map(destination => <Destination key={destination._id} destination={destination}></Destination>)
+                            }
+                        </div>
+                }
+
             </div>
 
         </div>
