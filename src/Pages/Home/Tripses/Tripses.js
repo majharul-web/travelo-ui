@@ -5,7 +5,7 @@ const Tripses = () => {
 
     const [trips, setTrips] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/trips/trip')
+        fetch('https://ancient-brushlands-56667.herokuapp.com/trips/trip')
             .then(res => res.json())
             .then(data => setTrips(data))
 
