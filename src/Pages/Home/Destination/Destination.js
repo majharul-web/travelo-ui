@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 const Destination = (props) => {
     const { imgURL, destination, details, _id } = props?.destination;
     return (
-        <Col>
+        <Col data-aos="fade-down-right" data-aos-easing="ease-out-cubic"
+            data-aos-duration="2000" >
             <Card>
                 <Card.Img variant="top" src={imgURL} />
                 <Card.Body>

@@ -3,7 +3,10 @@ import React from 'react';
 const Trip = (props) => {
     const { tipsName, date, img } = props.trip;
     return (
-        <div className='my-4 text-start'>
+        <div className='my-4 text-start'
+            data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="2000">
             <div>
                 <img src={img} alt="" />
             </div>
